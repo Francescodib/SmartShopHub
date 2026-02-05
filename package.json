@@ -1,0 +1,20 @@
+{
+  "name": "smartshop-hub",
+  "version": "1.0.0",
+  "description": "AI-powered e-commerce platform with personalized product recommendations",
+  "main": "index.js",
+  "scripts": {
+    "install-all": "npm install && cd backend && npm install && cd ../frontend && npm install",
+    "backend": "cd backend && npm run dev",
+    "frontend": "cd frontend && npm start",
+    "dev": "concurrently \"npm run backend\" \"npm run frontend\"",
+    "seed": "cd backend && npm run seed",
+    "test": "cd backend && npm test"
+  },
+  "keywords": ["e-commerce", "ai", "recommendation-system", "collaborative-filtering"],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
