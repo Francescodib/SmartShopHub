@@ -236,10 +236,6 @@ Browser opens automatically at http://localhost:3000
 *Main page featuring personalized product recommendations and highlighted categories*
 
 ### Product Catalog with Active Filters
-![Product Catalog](docs/screenshots/products-catalog.png)
-*Browse products with sidebar filters and active filter badges displayed above the grid*
-
-### Active Filters Display
 ![Active Filters](docs/screenshots/active-filters.png)
 *Color-coded filter badges (Search, Category, Brand, Price) with individual removal buttons*
 
@@ -250,10 +246,6 @@ Browser opens automatically at http://localhost:3000
 ### Dynamic Breadcrumbs Navigation
 ![Breadcrumbs](docs/screenshots/breadcrumbs.png)
 *Contextual navigation showing current location with clickable category links*
-
-### Navbar with Category Dropdown
-![Navbar Dropdown](docs/screenshots/navbar-dropdown.png)
-*Category dropdown menu with search bar and shopping cart*
 
 ### Shopping Cart
 ![Shopping Cart](docs/screenshots/cart.png)
@@ -278,7 +270,7 @@ Browser opens automatically at http://localhost:3000
 Test the application with these pre-seeded credentials:
 
 ```
-Email: john.smith0@example.com
+Email: demo@example.com
 Password: password123
 ```
 
