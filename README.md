@@ -460,7 +460,7 @@ Update these for production deployment:
 **Backend:**
 ```env
 NODE_ENV=production
-MONGODB_URI=mongodb+srv://user:pass@cluster.mongodb.net/smartshop-hub
+MONGODB_URI=example-mongodb-cloud-url
 JWT_SECRET=generate-strong-random-secret-here
 FRONTEND_URL=https://yourdomain.com
 ```
