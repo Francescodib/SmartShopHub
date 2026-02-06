@@ -1,6 +1,13 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { FiMail, FiPhone, FiMapPin, FiGithub, FiTwitter, FiLinkedin } from 'react-icons/fi';
+import React from "react";
+import { Link } from "react-router-dom";
+import {
+  FiMail,
+  FiPhone,
+  FiMapPin,
+  FiGithub,
+  FiTwitter,
+  FiLinkedin,
+} from "react-icons/fi";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -21,7 +28,8 @@ const Footer = () => {
             </div>
             <p className="text-sm text-gray-400 mb-4">
               Your one-stop destination for the latest electronics and gadgets.
-              Powered by AI recommendations for a personalized shopping experience.
+              Powered by AI recommendations for a personalized shopping
+              experience.
             </p>
             <div className="flex space-x-4">
               <a
@@ -53,30 +61,47 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-lg font-semibold text-white mb-4">Quick Links</h4>
+            <h4 className="text-lg font-semibold text-white mb-4">
+              Quick Links
+            </h4>
             <ul className="space-y-2">
               <li>
-                <Link to="/" className="text-sm hover:text-white transition-colors">
+                <Link
+                  to="/"
+                  className="text-sm hover:text-white transition-colors"
+                >
                   Home
                 </Link>
               </li>
               <li>
-                <Link to="/products" className="text-sm hover:text-white transition-colors">
+                <Link
+                  to="/products"
+                  className="text-sm hover:text-white transition-colors"
+                >
                   All Products
                 </Link>
               </li>
               <li>
-                <Link to="/products?category=laptops" className="text-sm hover:text-white transition-colors">
+                <Link
+                  to="/products?category=laptops"
+                  className="text-sm hover:text-white transition-colors"
+                >
                   Laptops
                 </Link>
               </li>
               <li>
-                <Link to="/products?category=smartphones" className="text-sm hover:text-white transition-colors">
+                <Link
+                  to="/products?category=smartphones"
+                  className="text-sm hover:text-white transition-colors"
+                >
                   Smartphones
                 </Link>
               </li>
               <li>
-                <Link to="/products?category=headphones" className="text-sm hover:text-white transition-colors">
+                <Link
+                  to="/products?category=headphones"
+                  className="text-sm hover:text-white transition-colors"
+                >
                   Headphones
                 </Link>
               </li>
@@ -85,30 +110,47 @@ const Footer = () => {
 
           {/* Customer Service */}
           <div>
-            <h4 className="text-lg font-semibold text-white mb-4">Customer Service</h4>
+            <h4 className="text-lg font-semibold text-white mb-4">
+              Customer Service
+            </h4>
             <ul className="space-y-2">
               <li>
-                <Link to="/profile" className="text-sm hover:text-white transition-colors">
+                <Link
+                  to="/profile"
+                  className="text-sm hover:text-white transition-colors"
+                >
                   My Account
                 </Link>
               </li>
               <li>
-                <Link to="/profile?tab=orders" className="text-sm hover:text-white transition-colors">
+                <Link
+                  to="/profile?tab=orders"
+                  className="text-sm hover:text-white transition-colors"
+                >
                   Order History
                 </Link>
               </li>
               <li>
-                <Link to="/cart" className="text-sm hover:text-white transition-colors">
+                <Link
+                  to="/cart"
+                  className="text-sm hover:text-white transition-colors"
+                >
                   Shopping Cart
                 </Link>
               </li>
               <li>
-                <a href="#faq" className="text-sm hover:text-white transition-colors">
+                <a
+                  href="#faq"
+                  className="text-sm hover:text-white transition-colors"
+                >
                   FAQ
                 </a>
               </li>
               <li>
-                <a href="#shipping" className="text-sm hover:text-white transition-colors">
+                <a
+                  href="#shipping"
+                  className="text-sm hover:text-white transition-colors"
+                >
                   Shipping Info
                 </a>
               </li>
@@ -117,24 +159,33 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div>
-            <h4 className="text-lg font-semibold text-white mb-4">Contact Us</h4>
+            <h4 className="text-lg font-semibold text-white mb-4">
+              Contact Us
+            </h4>
             <ul className="space-y-3">
               <li className="flex items-start space-x-3">
                 <FiMapPin className="mt-1 flex-shrink-0" size={18} />
                 <span className="text-sm">
-                  123 Tech Street<br />
-                  San Francisco, CA 94102
+                  123, Via Verdi
+                  <br />
+                  Bari - 70132, Italy
                 </span>
               </li>
               <li className="flex items-center space-x-3">
                 <FiPhone size={18} className="flex-shrink-0" />
-                <a href="tel:+1234567890" className="text-sm hover:text-white transition-colors">
-                  +1 (234) 567-890
+                <a
+                  href="tel:+1234567890"
+                  className="text-sm hover:text-white transition-colors"
+                >
+                  +39 (080) 123-456
                 </a>
               </li>
               <li className="flex items-center space-x-3">
                 <FiMail size={18} className="flex-shrink-0" />
-                <a href="mailto:support@smartshophub.com" className="text-sm hover:text-white transition-colors">
+                <a
+                  href="mailto:support@smartshophub.com"
+                  className="text-sm hover:text-white transition-colors"
+                >
                   support@smartshophub.com
                 </a>
               </li>
@@ -149,19 +200,29 @@ const Footer = () => {
               © {currentYear} SmartShop Hub. All rights reserved.
             </p>
             <div className="flex space-x-6">
-              <a href="#privacy" className="text-sm hover:text-white transition-colors">
+              <a
+                href="#privacy"
+                className="text-sm hover:text-white transition-colors"
+              >
                 Privacy Policy
               </a>
-              <a href="#terms" className="text-sm hover:text-white transition-colors">
+              <a
+                href="#terms"
+                className="text-sm hover:text-white transition-colors"
+              >
                 Terms of Service
               </a>
-              <a href="#cookies" className="text-sm hover:text-white transition-colors">
+              <a
+                href="#cookies"
+                className="text-sm hover:text-white transition-colors"
+              >
                 Cookie Policy
               </a>
             </div>
           </div>
           <p className="text-xs text-gray-500 text-center mt-4">
-            This is a demonstration project showcasing full-stack development with AI integration.
+            This is a demonstration project showcasing full-stack development
+            with AI integration.
           </p>
         </div>
       </div>
