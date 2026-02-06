@@ -24,6 +24,18 @@ const Products = () => {
     page: parseInt(searchParams.get('page')) || 1
   });
 
+  // Sync filters with URL params when URL changes
+  useEffect(() => {
+    setFilters({
+      category: searchParams.get('category') || '',
+      brand: searchParams.get('brand') || '',
+      minPrice: searchParams.get('minPrice') || '',
+      maxPrice: searchParams.get('maxPrice') || '',
+      search: searchParams.get('search') || '',
+      page: parseInt(searchParams.get('page')) || 1
+    });
+  }, [searchParams]);
+
   useEffect(() => {
     const fetchCategories = async () => {
       try {
@@ -56,37 +68,62 @@ const Products = () => {
     };
 
     fetchProducts();
+  }, [filters]);
+
+  const handleFilterChange = (key, value) => {
+    const newFilters = {
+      ...filters,
+      [key]: value,
+      page: 1 // Reset to first page when filters change
+    };
+
+    setFilters(newFilters);
 
     // Update URL params
     const params = {};
-    Object.entries(filters).forEach(([key, value]) => {
-      if (value) params[key] = value;
+    Object.entries(newFilters).forEach(([k, v]) => {
+      if (v) params[k] = v;
     });
     setSearchParams(params);
-  }, [filters, setSearchParams]);
-
-  const handleFilterChange = (key, value) => {
-    setFilters(prev => ({
-      ...prev,
-      [key]: value,
-      page: 1 // Reset to first page when filters change
-    }));
   };
 
   const clearFilters = () => {
-    setFilters({
+    const newFilters = {
       category: '',
       brand: '',
       minPrice: '',
       maxPrice: '',
       search: '',
       page: 1
-    });
+    };
+
+    setFilters(newFilters);
+    setSearchParams({}); // Clear URL params
   };
 
   const handlePageChange = (newPage) => {
-    setFilters(prev => ({ ...prev, page: newPage }));
+    const newFilters = { ...filters, page: newPage };
+    setFilters(newFilters);
+
+    // Update URL params
+    const params = {};
+    Object.entries(newFilters).forEach(([k, v]) => {
+      if (v) params[k] = v;
+    });
+    setSearchParams(params);
+
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const removeFilter = (key) => {
+    handleFilterChange(key, '');
+  };
+
+  // Check if any filters are active
+  const hasActiveFilters = filters.category || filters.brand || filters.search || filters.minPrice || filters.maxPrice;
+
+  const formatCategoryName = (category) => {
+    return category.charAt(0).toUpperCase() + category.slice(1);
   };
 
   return (
@@ -109,6 +146,74 @@ const Products = () => {
             <span>Filters</span>
           </button>
         </div>
+
+        {/* Active Filters Display */}
+        {hasActiveFilters && (
+          <div className="bg-white rounded-lg shadow-md p-4 mb-6">
+            <div className="flex items-center justify-between mb-3">
+              <h3 className="text-sm font-semibold text-gray-700">Active Filters:</h3>
+              <button
+                onClick={clearFilters}
+                className="text-sm text-primary-600 hover:text-primary-700 font-medium"
+              >
+                Clear All
+              </button>
+            </div>
+            <div className="flex flex-wrap gap-2">
+              {filters.search && (
+                <div className="flex items-center space-x-2 bg-primary-100 text-primary-800 px-3 py-1.5 rounded-full text-sm">
+                  <span>Search: <span className="font-medium">{filters.search}</span></span>
+                  <button
+                    onClick={() => removeFilter('search')}
+                    className="hover:text-primary-900"
+                  >
+                    <FiX size={16} />
+                  </button>
+                </div>
+              )}
+              {filters.category && (
+                <div className="flex items-center space-x-2 bg-blue-100 text-blue-800 px-3 py-1.5 rounded-full text-sm">
+                  <span>Category: <span className="font-medium">{formatCategoryName(filters.category)}</span></span>
+                  <button
+                    onClick={() => removeFilter('category')}
+                    className="hover:text-blue-900"
+                  >
+                    <FiX size={16} />
+                  </button>
+                </div>
+              )}
+              {filters.brand && (
+                <div className="flex items-center space-x-2 bg-green-100 text-green-800 px-3 py-1.5 rounded-full text-sm">
+                  <span>Brand: <span className="font-medium">{filters.brand}</span></span>
+                  <button
+                    onClick={() => removeFilter('brand')}
+                    className="hover:text-green-900"
+                  >
+                    <FiX size={16} />
+                  </button>
+                </div>
+              )}
+              {(filters.minPrice || filters.maxPrice) && (
+                <div className="flex items-center space-x-2 bg-purple-100 text-purple-800 px-3 py-1.5 rounded-full text-sm">
+                  <span>Price: <span className="font-medium">
+                    {filters.minPrice && `$${filters.minPrice}`}
+                    {filters.minPrice && filters.maxPrice && ' - '}
+                    {filters.maxPrice && `$${filters.maxPrice}`}
+                  </span></span>
+                  <button
+                    onClick={() => {
+                      removeFilter('minPrice');
+                      removeFilter('maxPrice');
+                    }}
+                    className="hover:text-purple-900"
+                  >
+                    <FiX size={16} />
+                  </button>
+                </div>
+              )}
+            </div>
+          </div>
+        )}
 
         <div className="flex flex-col md:flex-row gap-8">
           {/* Sidebar Filters */}

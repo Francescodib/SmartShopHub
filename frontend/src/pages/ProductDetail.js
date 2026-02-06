@@ -83,6 +83,10 @@ const ProductDetail = () => {
                 src={product.image}
                 alt={product.name}
                 className="w-full h-full object-cover"
+                onError={(e) => {
+                  e.target.onerror = null;
+                  e.target.src = `https://via.placeholder.com/400x400/e5e7eb/6b7280?text=${encodeURIComponent(product.category)}`;
+                }}
               />
             </div>
 

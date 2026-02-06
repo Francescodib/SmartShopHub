@@ -75,7 +75,11 @@ const productTemplates = {
  */
 const generateProducts = () => {
   const products = [];
-  let productId = 1;
+  let productId = 0;
+
+  // Single placeholder image for all products (consistent branding)
+  // Path to static image served from frontend/public/images/
+  const placeholderImage = '/images/placeholder.png';
 
   for (const [category, templates] of Object.entries(productTemplates)) {
     const categoryBrands = brands[category];
@@ -96,7 +100,7 @@ const generateProducts = () => {
           category,
           brand,
           specifications: new Map(Object.entries(template.specs)),
-          image: `https://via.placeholder.com/400x400?text=${encodeURIComponent(brand + ' ' + template.base)}`,
+          image: placeholderImage,
           stock: Math.floor(Math.random() * 100) + 10,
           rating: {
             average: parseFloat(rating.toFixed(1)),
@@ -230,9 +234,24 @@ const seedDatabase = async () => {
 
     // Generate and insert users
     console.log('👥 Generating users...');
-    const userData = generateUsers(60);
-    const users = await User.insertMany(userData);
-    console.log(`✅ Created ${users.length} users\n`);
+
+    // Create demo user first (always available with known credentials)
+    const demoUser = await User.create({
+      name: 'Demo User',
+      email: 'demo@example.com',
+      password: 'password123',
+      preferences: {
+        categories: ['laptops', 'smartphones'],
+        priceRange: { min: 0, max: 2000 }
+      },
+      consentToTracking: true
+    });
+
+    // Generate and create other users
+    const userData = generateUsers(59); // 59 + 1 demo = 60 total
+    const otherUsers = await Promise.all(userData.map(user => User.create(user)));
+    const users = [demoUser, ...otherUsers];
+    console.log(`✅ Created ${users.length} users (including demo@example.com)\n`);
 
     // Generate and insert interactions
     console.log('🔄 Generating interactions...');

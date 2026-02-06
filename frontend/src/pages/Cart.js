@@ -58,6 +58,10 @@ const Cart = () => {
                       src={item.product.image}
                       alt={item.product.name}
                       className="w-24 h-24 object-cover rounded-lg"
+                      onError={(e) => {
+                        e.target.onerror = null;
+                        e.target.src = `https://via.placeholder.com/96x96/e5e7eb/6b7280?text=${encodeURIComponent(item.product.category)}`;
+                      }}
                     />
                   </Link>
 
