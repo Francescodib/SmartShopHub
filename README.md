@@ -679,8 +679,9 @@ This project demonstrates:
 
 Full-Stack Developer specializing in AI-powered web applications.
 
+- 🌐 [Website](https://www.francescodibiase.com)
 - 💼 [LinkedIn](https://www.linkedin.com/in/francescodibiase79/)
-- 📧 Contact me via LinkedIn for questions or collaboration opportunities
+- 📧 Contact me for questions or collaboration opportunities
 
 ### About This Project
 
