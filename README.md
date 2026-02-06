@@ -673,16 +673,28 @@ This project demonstrates:
 ✅ **Code Quality**: Clean code, comments, documentation
 ✅ **Best Practices**: Industry-standard patterns and architecture
 
-## Contact & Portfolio
+## Author
 
-This project is part of a portfolio demonstrating modern web development capabilities. For questions or collaboration:
+**Francesco di Biase**
 
-- Check the `/api-docs` endpoint for API exploration
-- Review `docs/AI_MODEL_DOCUMENTATION.md` for AI implementation details
-- Explore the codebase for implementation examples
+Full-Stack Developer specializing in AI-powered web applications.
+
+- 💼 [LinkedIn](https://www.linkedin.com/in/francescodibiase79/)
+- 📧 Contact me via LinkedIn for questions or collaboration opportunities
+
+### About This Project
+
+This project is part of a portfolio demonstrating modern web development capabilities and AI integration skills.
+
+**Resources:**
+- 📚 Check the `/api-docs` endpoint for interactive API exploration
+- 🤖 Review [`docs/AI_MODEL_DOCUMENTATION.md`](docs/AI_MODEL_DOCUMENTATION.md) for detailed AI implementation
+- 📖 See [`docs/FEATURES.md`](docs/FEATURES.md) for comprehensive feature documentation
+- 📝 Read [`CHANGELOG.md`](CHANGELOG.md) for version history and updates
 
 ---
 
 **Built with:** Node.js, React, MongoDB, Express, TailwindCSS, Docker
 **Key Features:** AI Recommendations, E-commerce, GDPR Compliance, RESTful API
 **Purpose:** Portfolio demonstration of full-stack + AI development skills
+**Year:** 2025

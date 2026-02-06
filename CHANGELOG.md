@@ -256,5 +256,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
-**Maintained by**: SmartShop Hub Team
+**Author**: Francesco di Biase
+**LinkedIn**: [francescodibiase79](https://www.linkedin.com/in/francescodibiase79/)
 **Last Updated**: February 6, 2025

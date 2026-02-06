@@ -420,6 +420,7 @@ The system achieves:
 
 ---
 
-**Last Updated**: 2025
-**Version**: 1.0.0
-**Author**: SmartShop Hub Team
+**Last Updated**: February 2025
+**Version**: 1.1.0
+**Author**: Francesco di Biase
+**LinkedIn**: [francescodibiase79](https://www.linkedin.com/in/francescodibiase79/)

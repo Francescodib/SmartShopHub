@@ -1,6 +1,6 @@
 {
   "name": "smartshop-hub",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "AI-powered e-commerce platform with personalized product recommendations",
   "main": "index.js",
   "scripts": {
@@ -11,8 +11,20 @@
     "seed": "cd backend && npm run seed",
     "test": "cd backend && npm test"
   },
-  "keywords": ["e-commerce", "ai", "recommendation-system", "collaborative-filtering"],
-  "author": "",
+  "keywords": [
+    "e-commerce",
+    "ai",
+    "recommendation-system",
+    "collaborative-filtering",
+    "mern-stack",
+    "react",
+    "nodejs",
+    "mongodb"
+  ],
+  "author": {
+    "name": "Francesco di Biase",
+    "url": "https://www.linkedin.com/in/francescodibiase79/"
+  },
   "license": "MIT",
   "devDependencies": {
     "concurrently": "^8.2.2"
